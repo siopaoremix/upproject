@@ -1,0 +1,37 @@
+.container{
+	position: relative;
+    height: 100%;
+    padding-top: 60px;
+}
+
+
+.btn-primary{
+	font-weight: normal;
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 4px;	
+	width: 50%;
+	background-color: #79589f;
+}
+
+.btn{
+	background-color: #79589f;
+}
+
+
+.form-control{
+	margin: 5px auto 5px;
+	width: 50%;
+	display: block;
+}
+
+.form-errors{
+	list-style-type: none;
+	width: 50%;
+	text-align: center;
+	margin: 0px auto;
+	-webkit-padding-start: 0px;
+	font-size: 15px;
+	color: #ea6153;
+}

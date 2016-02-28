@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    <link rel="stylesheet" href="{% static 'third_party/Flat-UI-master/dist/css/flat-ui.min.css' %}" />
+	    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+	    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+	    <link rel="stylesheet" href="{% static 'css/ballot.css' %}">
+		<script src="{% static 'third_party/jquery/jquery-2.2.1.min.js' %}"></script>
+		<script src="{% static 'third_party/Flat-UI-master/dist/js/flat-ui.min.js' %}"></script>
+		<script src="{% static 'js/vote.js' %}"></script>
+	</head>
+	
+	<body>
+	    <div class="container">
+	        {% block content %}{% endblock %}
+	    </div>
+	</body>
+</html>
