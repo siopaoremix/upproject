@@ -1,0 +1,28 @@
+{% extends 'base.html '%}
+
+{% block content %}
+	<div class="ballot-container">
+		<form class="ballot-form" action="." method="POST">
+			<div class='row'>
+				<h3>President (1)</h3>
+				{{vote_form.president}}
+			</div>
+			<div class='row'>
+				<h3>Vice President (1)</h3>
+				{{vote_form.vice_president}}
+			</div>
+			<h3>Senators (12)</h3>
+			<div class='row'>
+				<div class="col-md-6">
+					{{vote_form.senators_1}}
+				</div>
+				<div class="col-md-6">
+					{{vote_form.senators_2}}
+				</div>
+			</div>
+			<div class='row'>
+				<button type="submit" class="btn btn-primary" value="Submit" tabindex="3">Submit</button>
+			</div>
+		</form>
+	</div>
+{% endblock %}

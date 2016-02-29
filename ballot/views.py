@@ -6,6 +6,6 @@ from ballot.forms import VoteForm
 # Create your views here.
 
 @login_required(login_url='/login/')
-def hello(request):
+def vote(request):
     form = VoteForm()
-    return render(request, 'hello.html', {'vote_form' : form})
+    return render(request, 'ballot.html', {'vote_form' : form})

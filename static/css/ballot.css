@@ -1,7 +1,7 @@
-.ballot-form ul{
+.ballot-container ul{
 	list-style-type: none;
 }
 
-.ballot-form{
+.ballot-container{
 	padding-left: 20px;
 }

@@ -19,7 +19,7 @@ VP_CANDIDATES = ( (1, 'Alan Peter Cayetano'),
                   (6, 'Antonio Trillanes'),
                   (7, 'Abstain'),)
 
-SENATE_CANDIDATES = ( (1,'Risa Hontiveros'),
+SENATE_CANDIDATES_1 = ( (1,'Risa Hontiveros'),
                         (2,'Lorna Kapunan'),
                         (3,'Mark Lapid'),
                         (4,'Larry Gadon'),
@@ -43,8 +43,9 @@ SENATE_CANDIDATES = ( (1,'Risa Hontiveros'),
                         (22,'Sandra Cam'),
                         (23,'Isko Moreno'),
                         (24,'Aldin Ali'),
-                        (25,'Melchor Chavez'),
-                        (26,'Sherwin Gatchalian'),
+                        (25,'Melchor Chavez'),)
+                        
+SENATE_CANDIDATES_2 =  ((26,'Sherwin Gatchalian'),
                         (27,'Tito Sotto'),
                         (28,'Susan Ople'),
                         (29,'Shariff Albani'),
