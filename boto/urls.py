@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
     url(r'^super-admin/', include(superadmin.site.urls)),
     url(r'^admin/', admin),
-    url(r'^hello/', vote),
+    url(r'^vote/', vote),
     url(r'^login/', login),
     url(r'^error/', error),
 )
