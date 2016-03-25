@@ -7,5 +7,13 @@ from ballot.forms import VoteForm
 
 @login_required(login_url='/login/')
 def vote(request):
-    form = VoteForm()
+    
+    if request.POST:
+        form = VoteForm(request.POST)
+        print('POSTTTT')
+        form.is_valid()
+        print(form.cleaned_data)
+    else:
+        form = VoteForm
     return render(request, 'ballot.html', {'vote_form' : form})
+

@@ -3,25 +3,116 @@
 {% block content %}
 	<div class="ballot-container">
 		<form class="ballot-form" action="." method="POST">
+			{% csrf_token %}
 			<div class='row'>
-				<h3>President (1)</h3>
-				{{vote_form.president}}
+
+				<h5>President (Vote for 1)</h5>
+				
+				{% for radio in vote_form.president %}
+				<p>
+			    	<input name="{{ radio.name }}" type="radio" id="radio_pres_{{ radio.index }}" value={{ radio.choice_value }}>
+			    	<label for="radio_pres_{{ radio.index }}">{{ radio.choice_label }}</label>
+				</p>
+				{% endfor %}
 			</div>
 			<div class='row'>
-				<h3>Vice President (1)</h3>
-				{{vote_form.vice_president}}
+
+				<h5>Vice President (Vote for 1)</h5>
+				{% for radio in vote_form.vice_president %}
+				<p>
+			    	<input name="{{ radio.name }}" type="radio" id="radio_vp_{{ radio.index }}" value={{ radio.choice_value }}>
+			    	<label for="radio_vp_{{ radio.index }}">{{ radio.choice_label }}</label>
+				</p>
+				{% endfor %}
+
 			</div>
-			<h3>Senators (12)</h3>
+			<h5>Senators (12)</h5>
 			<div class='row'>
-				<div class="col-md-6">
-					{{vote_form.senators_1}}
+				<div class="col s6">
+					{% for radio in vote_form.senators %}
+						<p>
+					    	<input name="{{ radio.name }}" type="checkbox" id="radio_sen_{{ radio.index }}" value={{ radio.choice_value }}>
+					    	<label for="radio_sen_{{ radio.index }}">{{ radio.choice_label }}</label>
+						</p>
+						{% if forloop.counter == 25 %}
+							</div>
+							<div class="col s6">
+						{% endif %}
+					
+					{% endfor %}
+				</div> 
+			</div>
+			<h5>Party List (1)</h5>
+			
+			<div class='row'>
+				<div class="col s3">
+					{% for radio in vote_form.party_list %}
+						<p>
+					    	<input name="{{ radio.name }}" type="radio" id="radio_pl_{{ radio.index }}" value={{ radio.choice_value }}>
+					    	<label for="radio_pl_{{ radio.index }}">{{ radio.choice_label }}</label>
+						</p>
+						{% if forloop.counter == 29 or forloop.counter == 58 or forloop.counter == 87 %}
+							</div>
+							<div class="col s3">
+						{% endif %}
+					
+					{% endfor %}
+				</div> 
+			</div>
+			<!-- 
+			<div class='row'>
+
+				<div class="col s3">
+						{% for radio in vote_form.party_list_1 %}
+						<p>
+					    	<input name="{{ radio.name }}" type="checkbox" id="radio_pl1_{{ radio.index }}" value={{ radio.choice_value }}>
+					    	<label for="radio_pl1_{{ radio.index }}">{{ radio.choice_label }}</label>
+						</p>
+						{% endfor %}	
+				</div> 
+				
+				<div class="col s3">
+						{% for radio in vote_form.party_list_2 %}
+						<p>
+					    	<input name="{{ radio.name }}" type="checkbox" id="radio_pl2_{{ radio.index }}" value={{ radio.choice_value }}>
+					    	<label for="radio_pl2_{{ radio.index }}">{{ radio.choice_label }}</label>
+						</p>
+						{% endfor %}	
+				</div> 				<div class="col s3">
+						{% for radio in vote_form.party_list_3 %}
+						<p>
+					    	<input name="{{ radio.name }}" type="checkbox" id="radio_pl3_{{ radio.index }}" value={{ radio.choice_value }}>
+					    	<label for="radio_pl3_{{ radio.index }}">{{ radio.choice_label }}</label>
+						</p>
+						{% endfor %}	
+				</div> 
+				
+				<div class="col s3">
+						{% for radio in vote_form.party_list_4 %}
+						<p>
+					    	<input name="{{ radio.name }}" type="checkbox" id="radio_pl4_{{ radio.index }}" value={{ radio.choice_value }}>
+					    	<label for="radio_pl4_{{ radio.index }}">{{ radio.choice_label }}</label>
+						</p>
+						{% endfor %}	
+				</div> 
+			</div>
+			 -->
+			<a id= "modal-link" href="#openModal">
+				<button type="button" class="btn btn-primary" >					
+						Submit Vote
+				</button>
+			</a>
+			
+			<div id="openModal" class="modalDialog">
+				<div>
+					<p class="president-choice"></p>
+					<p class="vp-choice"></p>
+					<ul class="senator-choice">
+					</ul>
+					<div class='row'>
+						<button type="submit" class="btn btn-primary" value="Submit" tabindex="3">Confirm</button>
+					</div>
 				</div>
-				<div class="col-md-6">
-					{{vote_form.senators_2}}
-				</div>
-			</div>
-			<div class='row'>
-				<button type="submit" class="btn btn-primary" value="Submit" tabindex="3">Submit</button>
 			</div>
 		</form>
 	</div>

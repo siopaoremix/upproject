@@ -27,6 +27,3 @@ class LoginForm(forms.Form):
         password = self.cleaned_data.get('password')
         user = authenticate(username=username, password=password)
         return user
-    
-class VoteForm(forms.Form):
-    president = forms.ChoiceField()

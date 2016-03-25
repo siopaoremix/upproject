@@ -1,0 +1,13 @@
+{% extends 'base.html '%}
+
+{% block content %}
+	<div class="confirm-container">
+		{{president}}
+		{{vice_president}}
+		{% for senator in senators %}
+			{{senator}}
+		{% endfor %}
+	</div>
+	<button></button>
+	<a href='/vote'>Back</a>
+{% endblock %}
